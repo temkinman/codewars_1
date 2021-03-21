@@ -21,12 +21,18 @@ C = inter(A,B) // -> {2}
 " May the Code be with you ! "
 */
 
-function inter(s1, s2){
-    // ...
-  }
+function inter(s1, s2) {
+  const arr_1 = Array.from(s1);
+  const arr_2 = Array.from(s2);
 
+  return new Set(arr_1.filter((el) => arr_2.includes(el)));
+}
 
-let A = new Set([1,2]), B = new Set([2,3]), C = new Set([2]),AB = inter(A,B);
+let A = new Set([1, 2, 3]),
+  B = new Set([2, 3, 4]),
+  C = new Set([2]),
+  AB = inter(A, B);
+console.log(inter(A, B));
 
 /*
 Test.assertSimilar( inter(A,A), A, "A inter A == A");
